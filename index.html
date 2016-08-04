@@ -85,11 +85,11 @@
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+    <section class="intel-primary" id="about">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
-                    <h2 class="section-heading">Dynamic Binary Instrumentation of OS Kernel, Driver and BIOS</h2>
+                    <h2 class="text-faded section-heading">Dynamic Binary Instrumentation of OS Kernel, Driver and BIOS</h2>
                     <hr class="light">
                     <p class="text-faded text-left">
                         We introduce the Intel® <b>Simulation and Analysis Engine (Intel® SAE)</b> --- a framework for <b>full-system instruction-level instrumentation</b> of "ring 0" (privileged) and "ring 3" (user-level) code behavior on x86 platforms. When plugged-in to a Wind River® Simics Virtual Platform, Intel® SAE boots native operating systems (e.g. Linux and Windows, as well as Android), running unmodified binaries while facilitating flexible and customizable <b>instruction-level instrumentation</b> of everything executing on the CPU, i.e. BIOS, kernel, drivers and all kernel and user-space processes. Beyond its ability to instrument a single system, Intel SAE is capable of distributed node-to-node multi-system simulation and instrumentation, useful for analysis of enterprise-scale workloads, such as CloudSuite, Hadoop, Memcached etc.
@@ -100,7 +100,8 @@
         </div>
     </section>
 
-    <section id="tutorials">
+    <section class="no-padding" id="tutorials">
+        <aside class="bg-dark">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center">
@@ -111,62 +112,16 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-6 text-center">
                     <div class="service-box">
-                        <a href="http://isca2016.eecs.umich.edu/"><h3>ISCA 2016</h3></a>
-                        <p class="text-muted">Saturday, June 18, 2016</p>
-                        <a class="btn btn-primary" href="img/ppts/simics_sae_isca_v2.pptx">PPT</a>
+                        <a class="btn btn-primary" href="ppts.html">Tutorials</a>
+                        <p>Slides now available!</p>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 text-center">
+                <div class="col-lg-6 text-center">
                     <div class="service-box">
-                        <a href="http://ics16.bilkent.edu.tr/"><h3>ICS 2016</h3></a>
-                        <p class="text-muted">Tuesday, May 31, 2016</p>
-                        <a class="btn btn-primary" href="img/ppts/IntelSAE_ICS16_final_nd.pptx">PPT</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <a href="http://www.ece.cmu.edu/calcm/asplos2016/"><h3>ASPLOS 2016</h3></a>
-                        <p class="text-muted">Sunday, April 3, 2016</p>
-                        <a class="btn btn-primary" href="img/ppts/simics_sae_asplos_v2.pptx">PPT</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <a href="https://apps.cs.utexas.edu/calendar/events/255092"><h3>UT Austin PL Lunch</h3></a>
-                        <p class="text-muted">Monday, March 21, 2016</p>
-                        <a class="btn btn-primary" href="img/ppts/UTAustin_PLLunch.pptx">PPT</a>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <a href="http://hpca22.site.ac.upc.edu/"><h3>HPCA 2016</h3></a>
-                        <p class="text-muted">Sunday, March 13, 2016</p>
-                        <a class="btn btn-primary" href="img/ppts/simics_sae_hpca_v5.pptx">PPT</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <a href="http://iiswc.org/iiswc2015/index.html"><h3>IISWC 2015</h3></a>
-                        <p class="text-muted">Sunday, October 6, 2015</p>
-                        <a class="btn btn-primary" href="img/ppts/simics_sae_iiswc15.pdf">PPT</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <a href="http://ispass.org/ispass2015/"><h3>ISPASS 2015</h3></a>
-                        <p class="text-muted">Sunday, March 29, 2015</p>
-                        <a class="btn btn-primary" href="img/ppts/simics_sae_ispass15_v7.pdf">PPT</a>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="service-box">
-                        <a href="videos.html"><h3>Video Tutorials</h3></a>
-                        <p class="text-muted">Watch at any time!</p>
-                        <a class="btn btn-primary" href="videos.html">Video</a>
+                        <a class="btn btn-primary" href="videos.html">Videos</a>
+                        <p>Watch at any time!</p>
                     </div>
                 </div>
             </div>
@@ -175,10 +130,10 @@
 
     <section class="no-padding" id="downloads">
         <aside class="bg-primary">
-            <div class="container text-center">
+            <div class="container text-center section-heading">
                 <div class="call-to-action">
                     <h2>Access to SAE is granted upon request!</h2>
-                    <a href="https://software.intel.com/en-us/form/intel-sae-access-request" target="_blank" rel="nofollow" class="btn btn-default btn-xl sr-button">Request Now!</a>
+                    <a href="https://software.intel.com/en-us/form/intel-sae-access-request" target="_blank" rel="nofollow" class="btn btn-intel btn-xl sr-button">Request Now!</a>
                 </div>
             </div>
         </aside>
@@ -220,7 +175,7 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
                     <h2 class="section-heading">
-                    You can download and read about SAE in greater detail <a href="http://3nity.io/~vj/downloads/publications/sae16ics.pdf" target="_blank" rel="nofollow" style="color:gold"> here (click me) </a>!
+                    You can download and read about SAE in greater detail <a href="http://3nity.io/~vj/downloads/publications/sae16ics.pdf" target="_blank" rel="nofollow" style="color:#BF5700"> here (click me) </a>!
                     </h2>
                     <hr class="light">
                     <p class="text-faded text-left">
@@ -261,15 +216,15 @@
                     <p>Ready to start your next project using SAE? That's great! Send us an email and we will get back to you as soon as possible!</p>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <i class="fa fa-envelope-o fa-3x sr-contact" style="color:#0071c5"></i>
                     <p><a href="mailto:intel.sae.support@intel.com">intel.sae.support@intel.com <br />(Our Support/program Team)</a></p>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <i class="fa fa-envelope-o fa-3x sr-contact" style="color:#0071c5"></i>
                     <p><a href="mailto:ron.kern@intel.com">ron.kern@intel.com <br />(Contracting Officer)</a></p>
                 </div>
                 <div class="col-lg-4 text-center">
-                    <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                    <i class="fa fa-envelope-o fa-3x sr-contact" style="color:#0071c5"></i>
                     <p><a href="mailto:andy.vickery@intel.com">andy.vickery@intel.com <br />(Program Manager)</a></p>
                 </div>
             </div>

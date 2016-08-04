@@ -50,8 +50,17 @@ p {
     background-color: @theme-primary;
 }
 
+.intel-primary {
+    background-color: @intel-primary;
+}
+
 .bg-dark {
     background-color: @gray-darker;
+    color: white;
+}
+
+.bg-gray {
+    background-color: @gray-dark;
     color: white;
 }
 
@@ -165,7 +174,7 @@ header {
     min-height: auto;
     .background-cover;
     background-position: center;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/intel-bg.png');
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('../img/intel-bg-ut.png');
     text-align: center;
     color: white;
     .header-content {
@@ -318,6 +327,10 @@ header {
 
 .btn-primary {
     .button-variant(white;@theme-primary;@theme-primary);
+}
+
+.btn-intel {
+    .button-variant(white;@intel-primary;@theme-primary);
 }
 
 .btn {
