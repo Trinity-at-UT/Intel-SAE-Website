@@ -1,13 +1,16 @@
 # Basic script for booting CentOS and running PARSEC 3.0
 $script_dir = (resolve-file -query "%script%")
 
+# Location of SAE
+$sae_directory = zsim
+
 # Configure the machine
 $host_name = "CentOS"
 $num_cpus=1
 $num_cores=8
 $num_threads=1
 $memory_megs = 16384
-$disk_image = centos.craff
+$disk_image = disk_images/centos.craff
 
 # Connect to real network
 if not defined create_network {$create_network = TRUE}
@@ -21,7 +24,6 @@ run-command-file "%script%/../targets/x86-x58-ich10/viper-fedora-14.simics"
 local $con = ($host_name.console.con)
 local $vga = ($host_name.mb.gpu.vga)
 
-#$os_ztool = (vcpu-command-all "ztool-load " + $script_dir + "/../zsim-16.2-external-ia32_intel64-lin/lib64/os-awareness.so " + $script_dir + "/centos68.cfg")
 script-branch {
     # Boot the OS and login
     $vga.wait-for-string "dhcp0 login:"
@@ -33,22 +35,16 @@ script-branch {
     $con.input "cd parsec-3.0\n"
     $vga.wait-for-string "sae@dhcp0"
 
-	#$ztool1 = (vcpu-command-all "ztool-load " + $script_dir + "/tools/os-task-switch.so")	
-
     # Start measuring user time
     $start_time = (python "os.times()[0]")
 
-    $con.input "bin/parsecmgmt -a run -p apps -n 8 -i simsmall\n"
-    $vga.vga.wait-for-string "[PARSEC] Done."
-
-    #vcpu-command-all "ztool-unload " + $ztool1
-    #vcpu-command-all "ztool-unload " + $os_ztool    
+    $con.input "for app in echo blackscholes bodytrack canneal dedup facesim ferret fluidanimate freqmine raytrace streamcluster swaptions vips x264; do bin/parsecmgmt -a run -p $app -n 8 -i simsmall; echo Done with $app; sleep 1; done\n"
+    $vga.wait-for-string "Done with x264"
 
     # Stop measuring usertime and report
     $end_time = (python "os.times()[0]")
     $elapsed = $end_time - $start_time
-    echo "PARSEC 3.0: " + $elapsed
-    quit
+    echo "PARSEC 3.0 time: " + $elapsed
 }
 
 # For performance (without SAE)
