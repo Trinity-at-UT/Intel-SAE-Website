@@ -1,0 +1,41 @@
+#########################
+#### GETTING STARTED ####
+#########################
+
+The Lubuntu disk image is provided mainly to demonstrate the speed and power of Simics.  To use this disk image, you must have a licensed copy of Simics.  Download both the disk image (lubuntu.craff) and the Simics script (lubuntu.simics).  These instructions assume you are working from a Simics workspace directory.  Create a directory for disk images and a directory for scripts and place the downloaded files in them as follows:
+
++-workspace
++---disk_images
+|   \---lubuntu.craff
++---scripts
+|   \---lubuntu.simics
+
+The script (lubuntu.simics) is already configured to boot Lubuntu.  From the workspace directory, enter the command:
+
+  $ ./simics scripts/lubuntu.simics
+
+If your Simics environment has not been configured to use VMP, you may encounter an error when trying to use Simics.  You can either disable the use of VMP (comment out line 28 in lubuntu.simics), which is not recommended, as it degrades performance, or you can install and enable VMP.  To do that, use these commands:
+
+  $ sudo bin/vmp-kernel-install
+  $ sudo bin/vmp-kernel-load
+
+Once Lubuntu has booted, you can log in using the following credentials:
+
+  Username: sae
+  Password: simics
+
+
+
+#########################
+####    USING SAE    ####
+#########################
+
+To use SAE, be sure you have installed SAE properly in your environment.  Once that has been completed, make the following changes to lubuntu.simics:
+
+  1. Disable vmp: comment out line 28.
+  2. Enable the SAE processor: uncomment line 31.
+
+Now you can run using SAE:
+
+  $ ./simics -e '$target_script = scripts/lubuntu.simics' targets/vcpu-common/vcpu-zsim.simics
+
